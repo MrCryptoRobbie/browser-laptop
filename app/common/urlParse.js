@@ -5,15 +5,7 @@
 const LRUCache = require('lru-cache')
 const config = require('../../js/constants/config')
 
-// muon.url.parse is not available in all environments (ex: unittests)
-let urlParse
-try {
-  urlParse = muon.url.parse
-} catch (e) {
-  // TODO: move to the new node URL API: https://nodejs.org/api/url.html#url_url
-  urlParse = require('url').parse
-}
-
+let urlParse = require('url').parse
 let cachedUrlParse = new LRUCache(config.cache.urlParse)
 
 module.exports = (url) => {
