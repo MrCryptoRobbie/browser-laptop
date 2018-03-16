@@ -494,6 +494,7 @@ function registerPermissionHandler (session, partition) {
           response.push(isAllowed)
         }
       }
+
       // Display 'Brave Browser' if the origin is null; ex: when a mailto: link
       // is opened in a new tab via right-click
       const message = locale.translation('permissionMessage').replace(/{{\s*host\s*}}/, origin || 'Brave Browser').replace(/{{\s*permission\s*}}/, permissions[permission].action)
